@@ -12,11 +12,11 @@
 
 
 import processing.opengl.*;
-import unlekker.util.*;
-import unlekker.modelbuilder.*;
+import unlekker.mb2.util.*;
+import unlekker.mb2.modelbuilder.*;
 import ec.util.*;
 
-String filename = "finalEdit1Min.txt";
+String filename = "/Users/simon/Documents/WAVtoCAD/CADVinyl/sources/Alesis-S4-Plus-Dyna-Roadz-C3.txt";
 
 //record parameters
 float diameter = 11.8;//diameter of record in inches

@@ -15,18 +15,18 @@ import wave
 import math
 import struct
 
-bitDepth = 8#target bitDepth
+bitDepth = 8 #target bitDepth
 frate = 44100#target frame rate
 
-fileName = "your_file_name_here.wav"#file to be imported (change this)
+fileName = "/Users/simon/Documents/WAVtoCAD/CADVinyl/sources/Alesis-S4-Plus-Dyna-Roadz-C3.wav" #file to be imported (change this)
 
 #read file and get data
 w = wave.open(fileName, 'r')
 numframes = w.getnframes()
-
-frame = w.readframes(numframes)#w.getnframes()
-
-frameInt = map(ord, list(frame))#turn into array
+print(numframes)
+frame = w.readframes(numframes) #w.getnframes()
+# print(list(frame))
+frameInt = list(frame) #turn into array
 
 #separate left and right channels and merge bytes
 frameOneChannel = [0]*numframes#initialize list of one channel of wave
