@@ -1,16 +1,26 @@
-http://www.instructables.com/id/3D-Printed-Record/
-Dec 2012
-by Amanda Ghassaei
+You can convert your own audio files into 3D STL models with these steps:
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+- Download Processing. (the blog post was written with the library that only supports processing up to 2.x) -> https://github.com/processing/processing/releases/download/processing-0227-2.2.1/processing-2.2.1-macosx.zip
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+- Download the ModelBuilder library for Processing.  ~I used version 0007a03.~ (https://github.com/mariuswatz/modelbuilderMk2)
+  
+- Unzip the Modelbuilder library .zip and copy the folder inside called "modelbuilder".  Unzip the processing .zip and go to Processing>libraries (processing opens a folder in your home directory) and paste the "modelbuilder" folder in the "libraries" folder.
 
-find up to date instructions for running this code on Instructables:
-http://www.instructables.com/id/3D-Printed-Record/step7/
+- Download Python 2.5.4.
+
+- Open the Python file called "wavtotxt".  Copy the file name of the file you just saved in the line:
+
+             fileName = "your_file_name_here.wav"
+
+Hit Run>RunModule, after a minute or two you will have a .txt file saved in the Processing3DPrintedRecord folder.
+
+- (If you want to run processing sketches from command line, you have to open the processing application, Tools>install "processing-java" and then press "no". This will install processing java in your user root directory (e.g. /Users/simon/processing-java*). Either this folder then has to be included into the path or the binary moved to a folder which is already included in the path. After that, source your shell rc file and type "processing-java --help".)
+
+- Open the Processing Sketch. In File>Preferences check the box that says "increase the maximum available memory to" and write and write at least 4GB in there.
+
+- change the name of the import file in the Processing sketch to your txt file name:
+
+             String filename = "your_file_name_here.txt";
+
+- Run the Processing sketch Sketch>Run.  After a few seconds you will see "record drawn, starting grooves" appear at the bottom of the Processing window.  After some more time you will get updates on the status of the sketch: "3 of 85 grooves drawn".  Eventually Processing will tell you that it is writing your STL file and when it is done it will say "Closing 'name_of_your_file.stl' and tell you how many faces are in the file.  You can find the finished file in the Processing3DPrintedRecord folder.
+
